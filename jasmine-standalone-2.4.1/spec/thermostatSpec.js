@@ -32,6 +32,14 @@ describe("Thermostat", function() {
      });
    });
 
+   describe("max_temp", function() {
+     it("the temperature should not be able to go over 25 when power saving is on", function() {
+       thermostat.power_save = true;
+       thermostat.temperature = 25;
+       expect(function(){thermostat.up();}).toThrow("Temperature cannot go above 25 when power saving is on");
+     });
+   });
+
 
 
 });

@@ -1,11 +1,17 @@
 function Thermostat() {
 this.temperature = 20;
+this.power_save = false;
 }
+var min_temp = 10;
+
 Thermostat.prototype.up = function() {
-  this.temperature += 1;
+  if(this.power_save === true) {if (this.temperature === 25) {throw("Temperature cannot go above 25 when power saving is on");}
+  else {this.temperature += 1; return this.temperature;};}
+  else {if (this.temperature === 32) {throw("Temperature cannot go above 32 when power save is off");}
+  else {this.temperature += 1; return this.temperature;};}
 };
 
 Thermostat.prototype.down = function() {
-  if (this.temperature === 10) {throw("Temperature cannot go under 10");}
+  if (this.temperature === min_temp) {throw("Temperature cannot go under 10");}
   else {this.temperature -= 1; return this.temperature;};
 };
