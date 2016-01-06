@@ -34,13 +34,13 @@ describe("Thermostat", function() {
 
    describe("max_temp", function() {
      it("the temperature should not be able to go over 25 when power saving is on", function() {
-       thermostat.power_save = true;
+       thermostat.powerSavingModeOn();
        thermostat.temperature = max_temp_on;
        expect(function(){thermostat.up();}).toThrow("Temperature cannot go above 25 when power saving is on");
      });
 
      it("the temperature should not be able to go over 32 when power saving is off", function() {
-       thermostat.power_save = false;
+       thermostat.powerSavingModeOff();
        thermostat.temperature = max_temp_off;
        expect(function(){thermostat.up();}).toThrow("Temperature cannot go above 32 when power saving is off");
      });
@@ -73,7 +73,7 @@ describe("Thermostat", function() {
      });
 
      it("it will be 3 when the temperature is above 25", function() {
-       thermostat.power_save = false
+       thermostat.powerSavingModeOff();
        thermostat.temperature = 25;
        thermostat.up();
        //debugger;

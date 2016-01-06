@@ -1,3 +1,5 @@
+//'use strict';
+
 function Thermostat() {
 this.temperature = 20;
 this.power_save = true;
@@ -29,4 +31,17 @@ Thermostat.prototype.colour_change = function() {
   if(this.temperature < 18) {this.colour = 1;}
   else if (this.temperature > 25) {this.colour = 3;}
   else {this.colour = 2;}
+};
+
+Thermostat.prototype.powerSavingModeOn = function() {
+  this.power_save = true;
+  return "on"
+};
+
+Thermostat.prototype.powerSavingModeOff = function() {
+  this.power_save = false;
+};
+
+Thermostat.prototype.powerSavingModeOff = function() {
+  this.power_save = false;
 };
