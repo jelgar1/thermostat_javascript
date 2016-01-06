@@ -27,7 +27,7 @@ describe("Thermostat", function() {
 
    describe("min_temp", function() {
      it("the temperature should not be able to go under 10", function() {
-       thermostat.temperature = 10;
+       thermostat.temperature = min_temp;
        expect(function(){thermostat.down();}).toThrow("Temperature cannot go under 10");
      });
    });
@@ -35,10 +35,51 @@ describe("Thermostat", function() {
    describe("max_temp", function() {
      it("the temperature should not be able to go over 25 when power saving is on", function() {
        thermostat.power_save = true;
-       thermostat.temperature = 25;
+       thermostat.temperature = max_temp_on;
        expect(function(){thermostat.up();}).toThrow("Temperature cannot go above 25 when power saving is on");
      });
+
+     it("the temperature should not be able to go over 32 when power saving is off", function() {
+       thermostat.power_save = false;
+       thermostat.temperature = max_temp_off;
+       expect(function(){thermostat.up();}).toThrow("Temperature cannot go above 32 when power saving is off");
+     });
    });
+
+   describe("power_save", function() {
+     it("it should be on by default", function() {
+       expect(thermostat.power_save).toEqual(true);
+     });
+   });
+
+   describe("reset", function() {
+     it("it will reset the temperature back to 20", function() {
+       thermostat.temperature = min_temp;
+       thermostat.reset();
+       expect(thermostat.temperature).toEqual(20);
+     });
+   });
+
+   describe("colour", function() {
+     it("it will default be 2", function() {
+       expect(thermostat.colour).toEqual(2);
+     });
+
+     it("it will be 1 when the temperature is below 18", function() {
+       thermostat.temperature = 18;
+       thermostat.down();
+       //debugger;
+       expect(thermostat.colour).toEqual(1);
+     });
+
+     it("it will be 3 when the temperature is above 25", function() {
+       thermostat.power_save = false
+       thermostat.temperature = 25;
+       thermostat.up();
+       //debugger;
+       expect(thermostat.colour).toEqual(3);
+   });
+ });
 
 
 
