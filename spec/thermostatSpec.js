@@ -61,23 +61,23 @@ describe("Thermostat", function() {
    });
 
    describe("colour", function() {
-     it("it will default be 2", function() {
-       expect(thermostat.colour).toEqual(2);
+     it("it will default be medium", function() {
+       expect(thermostat.colour).toEqual('medium');
      });
 
-     it("it will be 1 when the temperature is below 18", function() {
+     it("it will be low when the temperature is below 18", function() {
        thermostat.temperature = 18;
        thermostat.down();
        //debugger;
-       expect(thermostat.colour).toEqual(1);
+       expect(thermostat.colour).toEqual('low');
      });
 
-     it("it will be 3 when the temperature is above 25", function() {
+     it("it will be high when the temperature is above 25", function() {
        thermostat.powerSavingModeOff();
        thermostat.temperature = 25;
        thermostat.up();
        //debugger;
-       expect(thermostat.colour).toEqual(3);
+       expect(thermostat.colour).toEqual('high');
    });
  });
 

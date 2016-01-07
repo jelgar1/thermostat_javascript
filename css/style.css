@@ -1,0 +1,33 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  font-family: Futura, Tahoma, sans-serif;;
+}
+
+h1 {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 50px;
+  border: solid grey 10px;
+
+}
+
+.low {
+  color: #F2F2F2;
+  background-color: #79973F;
+}
+
+.medium {
+  color: #F2F2F2;
+  background-color: #CFB53B;
+}
+
+.high {
+  color: #F2F2F2;
+  background-color: #B13E0F;
+}
