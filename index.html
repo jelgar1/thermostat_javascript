@@ -9,17 +9,17 @@
   </head>
   <body>
     <section>
-      <h1 id="temperature"></h1>
+    <div id='temperature-box'>
+      <h1><span id="temperature"></span>&#176;C</h1>
+    </div>
       <p>
         <button id="temperature-up">+</button>
         <button id="temperature-down">-</button>
         <button id="temperature-reset">reset</button>
-        power saving mode is <span id="power-saving-status">on</span>
-        <button id="powersaving-on">PSM on</button>
-        <button id="powersaving-off">PSM off</button>
+        <button class="power-save" id="power-saving-button">power saving mode is <span id="power-saving-status">on</span></button>
       </p>
       <section>
-        <h1>Current temperature: <span id="current-temperature"><span></h1>
+        <h1 class="box">Current temperature in <span id="current-temperature"></span>&#8451;</h1>
         <form id="select-city">
           <input id="current-city" type="text" placeholder="Where are you?">
           <input type='submit'</input>

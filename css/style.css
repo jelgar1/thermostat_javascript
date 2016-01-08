@@ -6,28 +6,59 @@
 
 body {
   text-align: center;
-  font-family: Futura, Tahoma, sans-serif;;
+  font-family: Futura, Tahoma, sans-serif;
 }
 
-h1 {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 50px;
-  border: solid grey 10px;
+button {
+  width: 200px;
+  background: #404040;
+  color: #F2F2F2;
+  padding: 10px 20px 10px 20px;
+  font-family: Futura, Tahoma, sans-serif;
+}
 
+input {
+  width: 200px;
+  background: #404040;
+  color: #F2F2F2;
+  padding: 10px 20px 10px 20px;
+  font-family: Futura, Tahoma, sans-serif;
+}
+
+#current-city {
+  background: white;
+  color: #575757;
+}
+
+#temperature-box {
+position: relative;
+max-width: 600px;
+margin: 10px auto;
+padding: 10px;
+border-radius: 10px;
 }
 
 .low {
   color: #F2F2F2;
-  background-color: #79973F;
+  background-color: #AEC4B8;
 }
 
 .medium {
   color: #F2F2F2;
-  background-color: #CFB53B;
+  background-color: #AEB8C4;
 }
 
 .high {
   color: #F2F2F2;
-  background-color: #B13E0F;
+  background-color: #C4AEB1;
+}
+
+.powersave-off {
+  background-color: #D74B37;
+}
+
+.box {
+  max-width: 600px;
+  margin: 20px auto;
+  border: solid grey 10px;
 }

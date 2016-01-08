@@ -29,7 +29,7 @@ Thermostat.prototype.reset = function() {
 };
 
 Thermostat.prototype.colour_change = function() {
-  if(this.temperature < 18) {this.colour = 'low';}
+  if(this.temperature < 17) {this.colour = 'low';}
   else if (this.temperature > 25) {this.colour = 'high';}
   else {this.colour = 'medium';}
 };
